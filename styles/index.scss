@@ -1,0 +1,130 @@
+:root {
+  --color-text: #263238;
+  --color-border: rgba(38 50 56 / 0.16);
+  --color-form-active: #1BB55C;
+  --color-background: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: Inter;
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  &__container {
+    max-width: 485px;
+    text-align: center;
+    margin: 45px auto;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 29px;
+  }
+
+  &__form {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: calc(20 / 12 * 100%);
+    letter-spacing: 0.06px;
+    margin-bottom: 11px;
+  }
+
+  &__link {
+    color: inherit;
+  }
+
+  &__button {
+    color: var(--color-background);
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: var(--color-form-active);
+    border: none;
+    padding: 10.5px 62.5px;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 21px;
+  row-gap: 26px;
+
+  &__input {
+    margin-top: 7px;
+
+    &_textarea {
+      grid-column: span 2;
+
+      & .input__form {
+        resize: none;
+        height: 120px;
+      }
+    }
+  }
+}
+
+.input {
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 9px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: calc(16 / 12 * 100%);
+    transform: translateY(-50%);
+    background-color: var(--color-background);
+    display: block;
+    padding: 0 3px;
+  }
+
+  &__form {
+    font-size: 16px;
+    line-height: 150%;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    letter-spacing: 0.16px;
+    font-weight: 400;
+    padding: 18px 12px;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+
+    &:focus {
+      outline: 2px solid var(--color-form-active);
+      border-color: var(--color-background);
+
+      & + .input__label {
+        color: var(--color-form-active);
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: tomato;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}

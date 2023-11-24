@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:regular,500,600"
+      rel="stylesheet"
+    />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page__container">
+        <h5 class="page__title">Обратная форма</h5>
+        <form data-form class="page__form form" id="form">
+          <label class="form__input input">
+            <input
+              data-input
+              type="text"
+              class="input__form"
+              required
+              name="name"
+            />
+            <span class="input__label">ФИО</span>
+          </label>
+          <label class="form__input input">
+            <input
+              data-input
+              type="tel"
+              class="input__form"
+              required
+              name="phone"
+            />
+            <span class="input__label">Телефон</span>
+          </label>
+          <label class="form__input input">
+            <input data-input type="email" class="input__form" name="email" />
+            <span class="input__label">E-mail</span>
+          </label>
+          <label class="form__input input form__input_textarea">
+            <textarea
+              data-input="textarea"
+              type="text"
+              class="input__form"
+              name="message"
+            ></textarea>
+            <span class="input__label">Сообщение</span>
+          </label>
+        </form>
+        <p class="page__text">
+          Отправляя форму, Вы соглашаетесь на
+          <a class="page__link" href="#">обработку персональных данных</a>
+        </p>
+        <button data-button form="form" type="submit" class="page__button">
+          Отправить
+        </button>
+      </div>
+    </div>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
