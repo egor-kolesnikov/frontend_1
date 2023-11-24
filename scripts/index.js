@@ -108,10 +108,12 @@ function handleLoad() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    for (let key in values) {
-      values[key] = values[key].trim()
-    }
-    console.log(values)
+    const formData = new FormData(form)
+    const name = formData.get('name').trim()
+    const email = formData.get('email').trim()
+    const phone = formData.get('phone').trim()
+    const message = formData.get('message').trim()
+    console.log(name, email, phone, message)
   }
 
   function setError(text, inputElement) {
